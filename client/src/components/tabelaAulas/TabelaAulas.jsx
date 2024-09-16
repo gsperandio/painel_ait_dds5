@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import AbreviaData from "./AbreviaData";
 import AbreviaInstrutor from "./AbreviaInstrutor";
+import AbreviaAmbiente from "./AbreviaAmbiente";
+import AbreviaUc from "./AbreviaUc";
 
 function TabelaAulas() {
     const [aulas, setAulas] = useState([]);
@@ -51,7 +53,7 @@ function TabelaAulas() {
                             <td>{aula.turma}</td>
                             <td><AbreviaInstrutor nome={aula.instrutor}/></td>
                             <td><AbreviaUc materia={aula.unidade_curricular}/></td>
-                            <td><AbreviaAmbiente ambiente={aula.ambiente}/></td>
+                            <td><AbreviaAmbiente ambientes={aula.ambiente}/></td>
                         </tr>
                     ))}
                 </tbody>

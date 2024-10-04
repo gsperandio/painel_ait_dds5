@@ -2,6 +2,11 @@
     color: #e1e2e3;
 }
 
+.active {
+    color:#fff !important;
+    background-color: pink !important;
+}
+
 .menu_navegacao a:hover {
     color: #fff;
     transition: 0.5s;

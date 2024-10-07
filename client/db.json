@@ -34,59 +34,12 @@
       "chave": null
     },
     {
-      "id": "206c",
-      "data": "2024-10-04",
-      "data_hora_inicio": "18:20",
-      "data_hora_fim": "19:19",
-      "turma": "bb",
-      "instrutor": "bibi",
-      "unidade_curricular": "secso",
-      "ambiente": "room-606",
-      "chave": null
-    },
-    {
-      "id": "0140",
-      "data": "2024-10-04",
-      "data_hora_inicio": "18:20",
-      "data_hora_fim": "19:19",
-      "turma": "bb",
-      "instrutor": "bibi",
-      "unidade_curricular": "secso",
-      "ambiente": "room-606",
-      "chave": null
-    },
-    {
-      "id": "c9ab",
-      "data": "2024-10-04",
-      "data_hora_inicio": "18:20",
-      "data_hora_fim": "19:19",
-      "turma": "bb",
-      "instrutor": "bibi",
-      "unidade_curricular": "secso",
-      "ambiente": "room-606",
-      "chave": null
-    },
-    {
-      "id": "d32a",
-      "data": "2024-10-04",
-      "data_hora_inicio": "18:20",
-      "data_hora_fim": "19:19",
-      "turma": "bb",
-      "instrutor": "bibi",
-      "unidade_curricular": "secso",
-      "ambiente": "room-606",
-      "chave": null
-    },
-    {
-      "id": "de9c",
-      "data": "2024-10-03",
-      "data_hora_inicio": "16:18",
-      "data_hora_fim": "17:19",
-      "turma": "69",
-      "instrutor": "bibi",
-      "unidade_curricular": "secso",
-      "ambiente": "room-606",
-      "chave": null
+      "id": "5169",
+      "data": "2024-10-07",
+      "data_hora_inicio": "16:20",
+      "data_hora_fim": "17:23",
+      "turma": "dds3",
+      "instrutor": "bibi"
     }
   ],
   "imagens": [

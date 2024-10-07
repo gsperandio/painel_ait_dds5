@@ -1,8 +1,7 @@
 import React from 'react'
-import NavBar from '../layout/Navbar';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
-function FormAula() {
+function FormAula({titulo, textoBotao, handleSubmit, id}) {
     const [dataAula, setDataAula] = useState('');
     const [horaInicio, setHoraInicio] = useState('');
     const [horaFim, setHoraFim] = useState('');
@@ -10,45 +9,52 @@ function FormAula() {
     const [instrutor, setInstrutor] = useState('');
     const [unidadeCurricular, setUnidadeCurricular] = useState('');
     const [ambiente, setAmbiente] = useState('');
-   
+    
+    //const [aula, setAula] = useState({});
 
-    async function cadastrarAula(e) {
-        e.preventDefault();
-        console.log(dataAula, horaInicio, horaFim, turma, instrutor, unidadeCurricular, ambiente)
-        const infoAula = {
-            data:dataAula,
-            data_hora_inicio:horaInicio,
-            data_hora_fim:horaFim,
-            turma:turma,
-            instrutor:instrutor,
-            unidade_curricular:unidadeCurricular,
-            ambiente:ambiente,
-            chave:null
-        };
+    useEffect(()=>{
+        if(id){
+            baixarAula(id)
+        }
+    },[]);
 
+    async function baixarAula (id){
         try {
-            const resposta = await fetch('http://localhost:5000/aulas',{
-                method: 'POST',
-                headers: {'Content-Type':'application/json'},
-                body: JSON.stringify(infoAula)
+            const resposta = await fetch(`http://localhost:5000/aulas/${id}`,{
+                method:'GET', 
+                headers:{
+                    'Content-Type':'application/json'
+                }
             })
 
-            if(!resposta.ok){
-                console.log('Erro ao cadastrar aula');
+            if (!resposta.ok){
+                throw new Error('Erro ao buscar aula');
             }else{
-                alert('Aula cadastrada com sucesso');
+                console.log(JSON.stringify(resposta));
             }
-
         } catch (error) {
-            console.error('Erro ao cadastrar Aula', error)
+            console.log(error);
         }
-        
+
     }
+   
+    function submit(e){
+        e.preventDefault();
+        const aula = {
+            data: dataAula,
+            data_hora_inicio: horaInicio,
+            data_hora_fim: horaFim,
+            turma: turma,
+            instrutor: instrutor,
+        }
+        handleSubmit(aula);
+    }
+
     return (
         <>
             <div className='container col-sm-12 col-md-6 col-lg-3 mt-3'>
-                <h3 className="text-center">Cadastro Aula</h3>
-                <form onSubmit={cadastrarAula}>
+                <h3 className="text-center">{titulo}</h3>
+                <form onSubmit={submit}>
                     <label className='form-label' htmlFor="">data:</label>
                     <input className='form-control' type="date" name="" id="" value={dataAula} onChange={(e) => (setDataAula(e.target.value))} />
 
@@ -71,7 +77,7 @@ function FormAula() {
                     <input className='form-control' type="text" name="" id="" value={ambiente} onChange={(e) => (setAmbiente(e.target.value))} />
 
                     <a className='btn btn-danger mt-3 float-start' href="">Cancelar</a>
-                    <button className='btn btn-success mt-3 float-end' type='submit'>Salvar</button>
+                    <button className='btn btn-success mt-3 float-end' type='submit'>{textoBotao}</button>
                 </form>
             </div>
         </>

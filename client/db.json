@@ -1,15 +1,12 @@
 {
   "aulas": [
     {
-      "id": "1300",
-      "data": "2024-08-29T03:00:00.000Z",
-      "data_hora_inicio": "2024-08-29T21:00:00.000Z",
-      "data_hora_fim": "2024-08-30T01:00:00.000Z",
+      "data": "",
+      "data_hora_inicio": "14:32",
+      "data_hora_fim": "15:35",
       "turma": "EMP-NBM-03",
-      "instrutor": "JOEL HERBERT BARBOSA SILVA",
-      "unidade_curricular": "NOÇÕES BÁSICAS PARA MAQUINISTAS (CH: 219.0000)",
-      "ambiente": "VTRIA-3-SALA-3004",
-      "chave": null
+      "instrutor": "GABRIEL JUNIOR",
+      "id": "1300"
     },
     {
       "id": "1280",

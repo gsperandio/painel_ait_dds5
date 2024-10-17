@@ -50,10 +50,12 @@ function FormAula({titulo, textoBotao, handleSubmit, id, tipo}) {
         e.preventDefault();
         const aula = {
             data: dataAula,
-            data_hora_inicio: horaInicio,
-            data_hora_fim: horaFim,
+            data_hora_inicio: `${dataAula} ${horaInicio}`,
+            data_hora_fim: `${dataAula} ${horaFim}`,
             turma: turma,
             instrutor: instrutor,
+            unidade_curricular: unidadeCurricular,
+            ambiente: ambiente
         }
         handleSubmit(aula,id);
         navigate(`/gestao_aulas/${tipo}`);

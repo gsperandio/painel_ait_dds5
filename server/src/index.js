@@ -3,7 +3,7 @@ import express from 'express';
 // Importando cors
 import cors from 'cors';
 // Importando funções (metodos do controller)
-import { mostrarAulas, criarAulas, atualizarAula, excluirAula } from './controllers/AulaController.js';
+import { mostrarAulas, criarAulas, atualizarAula, excluirAula, mostarUmaAula } from './controllers/AulaController.js';
 
 //Chamando função express
 const app = express();
@@ -25,6 +25,8 @@ app.post('/aulas', criarAulas);
 app.get('/aulas', mostrarAulas);
 app.put('/aulas/:id',atualizarAula);
 app.delete('/aulas/:id',excluirAula);
+
+app.get('/aulas/:id', mostarUmaAula);
 
 //Iniciando API e exibindo mensagem no console com a porta
 app.listen(porta,()=>{

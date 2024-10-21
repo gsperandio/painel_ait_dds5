@@ -122,3 +122,21 @@ export async function deleteAula(id) {
         return[500, error];
     }
 }
+
+export async function showOneAula(id) {
+    // Criando conexão para o banco de dados usando configutações de 'db'
+    const conexao = mysql.createPool(db);
+    console.log('Mostrando uma aula model Aula');
+    const sql = `SELECT * FROM aulas WHERE id = ?`
+
+    const params = [id];
+
+    try {
+        const [retorno] = await conexao.query(sql,params);
+        console.log('Mostrando aula');
+        return[200, retorno[0]]
+    } catch (error) {
+        console.log(error);
+        return[500, error];
+    }
+}
